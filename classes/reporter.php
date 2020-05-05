@@ -78,7 +78,7 @@ class reporter {
 		$this->fullFilePath = $this->reportFolder.DIRECTORY_SEPARATOR.date('Y-m-d H.i.s ').basename($this->projectPath, '.php').".md";
 
 		$this->file = fopen($this->fullFilePath, 'w+');
-		register_shutdown_function([$this, 'onShutdown']);
+		register_shutdown_function(array($this, 'onShutdown'));
 
 		$this->add(date('c', $this->startTime), 0, 1);
 		$this->add("Scanning {$this->projectPath}", 0, 1);
