@@ -51,7 +51,7 @@ class options {
 	 *
 	 * @var		array
 	 */
-	private $validShortOptions = [
+	private $validShortOptions = array(
 		'f'	=> [
 			'option'		=> self::OPTION_REQUIRED,
 			'value' 		=> self::VALUE_REQUIRED,
@@ -86,14 +86,14 @@ class options {
 			'example'			=> '-x="php,inc"',
 			'comma_delimited'	=> true
 		]
-	];
+	);
 
 	/**
 	 * Long(Two dashes, multiple letter) Options
 	 *
 	 * @var		array
 	 */
-	private $validLongOptions = [
+	private $validLongOptions = array(
 		'php'	=> [
 			'option'		=> self::OPTION_OPTIONAL,
 			'value' 		=> self::VALUE_REQUIRED,
@@ -113,7 +113,7 @@ class options {
 				'html'
 			]
 		]*/
-	];
+	);
 
 	/**
 	 * Validated Options
