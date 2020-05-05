@@ -88,10 +88,13 @@ class tests {
 	public function registerTests($testType, $tests) {
 		foreach ($tests as $test) {
 			$arr = $this->tests;
+			$type = $this->testTypes;
+			array_push($type,$testType);
+			$callable = array($type, '_'.$test);
 			array_push($arr,array(
 				'type'		=> $testType,
 				'test'		=> $test,
-				'callable'	=> array($this->testTypes[$testType], '_'.$test)
+				'callable'	=> $callable
 				)
 			);
 			/*$this->tests[] = array(
