@@ -37,7 +37,7 @@ class reporter {
 	 *
 	 * @var		array
 	 */
-	private $sectionBuffers = [];
+	private $sectionBuffers = array();
 
 	/**
 	 * Start Time, date('U')
