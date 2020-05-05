@@ -52,7 +52,7 @@ class tests {
 	 * @param	array	[Optional] Test Types to Run
 	 * @return	void
 	 */
-	public function __construct($testTypes = []) {
+	public function __construct($testTypes = array()) {
 		if (!is_array($testTypes) && !empty($testTypes)) {
 			throw new \Exception(__METHOD__.": Invalid test types variable passed.");
 		} elseif (!empty($testTypes)) {
