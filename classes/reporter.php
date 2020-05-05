@@ -116,8 +116,7 @@ class reporter {
 		if (empty($section)) {
 			throw new \Exception(__METHOD__.": The section can not be empty.");
 		}
-		$arr = $this->sectionBuffers[$section][$filePath][$test];
-		array_push($arr,array($lineNumber, $codeLine));
+		array_push($this->sectionBuffers[$section][$filePath][$test],array($lineNumber, $codeLine));
 	}
 
 	/**
