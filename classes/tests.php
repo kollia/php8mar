@@ -97,11 +97,6 @@ class tests {
 				'callable'	=> $callable
 				)
 			);
-			/*$this->tests[] = array(
-				'type'		=> $testType,
-				'test'		=> $test,
-				'callable'	=> [$this->testTypes[$testType], '_'.$test]
-			);*/
 		}
 	}
 
