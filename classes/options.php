@@ -52,40 +52,40 @@ class options {
 	 * @var		array
 	 */
 	private $validShortOptions = array(
-		'f'	=> [
+		'f'	=> array(
 			'option'		=> self::OPTION_REQUIRED,
 			'value' 		=> self::VALUE_REQUIRED,
 			'comment'		=> 'Path to the file or folder to run against.',
 			'description'	=> 'The location of the file or folder to use for generating the report.  A fully qualified path is recommended.  Relative paths will be based off the php7mar folder.',
 			'example'		=> '-f="/path/to/folder"'
-		],
-		'r'	=> [
+		),
+		'r'	=> array(
 			'option'		=> self::OPTION_OPTIONAL,
 			'value' 		=> self::VALUE_REQUIRED,
 			'comment'		=> 'Path to the folder to save the report.',
 			'description'	=> 'The location to save the final report.  By default this saves into the reports/ folder inside the php7mar folder.  A fully qualified path is recommended.  Relative paths will be based off the php7mar folder.',
 			'example'		=> '-r="/path/to/folder"'
-		],
-		't'	=> [
+		),
+		't'	=> array(
 			'option'		=> self::OPTION_OPTIONAL,
 			'value' 		=> self::VALUE_REQUIRED,
 			'comment'		=> 'Types of tests to run.',
 			'description'	=> 'By default all tests will run.  This option allows tests to be selected using a comma delimited list.  Allowable values: critical, nuance, and syntax.',
 			'example'		=> '-t="syntax,nuance"',
-			'allowed'		=> [
+			'allowed'		=> array(
 				'critical',
 				'nuance',
 				'syntax'
-			]
-		],
-		'x' => [
+			)
+		),
+		'x' => array(
 			'option'			=> self::OPTION_OPTIONAL,
 			'value'				=> self::VALUE_REQUIRED,
 			'comment'			=> 'File extensions to include when scanning a directory.',
 			'description'		=> 'A comma separated list of file extensions to consider as PHP files.  Defaults to "php"',
 			'example'			=> '-x="php,inc"',
 			'comma_delimited'	=> true
-		]
+		)
 	);
 
 	/**
@@ -94,13 +94,13 @@ class options {
 	 * @var		array
 	 */
 	private $validLongOptions = array(
-		'php'	=> [
+		'php'	=> array(
 			'option'		=> self::OPTION_OPTIONAL,
 			'value' 		=> self::VALUE_REQUIRED,
 			'comment'		=> 'File path to the PHP binary to use for syntax checking.',
 			'description'	=> 'If this option is not used syntax checking will use the default PHP installtion to test syntax.',
 			'example'		=> '--php="/path/to/php/binary/php"'
-		],
+		),
 		/*'format'	=> [
 			'option'		=> self::OPTION_OPTIONAL,
 			'value' 		=> self::VALUE_REQUIRED,
@@ -120,7 +120,7 @@ class options {
 	 *
 	 * @var		array
 	 */
-	private $options = [];
+	private $options = array();
 
 	/**
 	 * Main Constructor
