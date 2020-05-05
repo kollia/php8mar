@@ -23,7 +23,7 @@ class nuance {
 	 *
 	 * @var		array
 	 */
-	private $tests = [
+	private $tests = array(
 		'yield',
 		'arrayValueByReference',
 		'listUnpackString',
@@ -32,7 +32,7 @@ class nuance {
 		'funcGetArg',
 		'hexadecimalString',
 		'unicode'
-	];
+	);
 
 	/**
 	 * Get all tests for this test type.
