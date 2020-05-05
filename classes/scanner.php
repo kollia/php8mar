@@ -23,7 +23,7 @@ class scanner {
 	 *
 	 * @var		array
 	 */
-	private $files = [];
+	private $files = array();
 
 	/**
 	 * List of file extension(s) to process.
@@ -100,7 +100,7 @@ class scanner {
 
 		$lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 		if ($lines === false) {
-			$lines = [];
+			$lines = array();
 		}
 		return $lines;
 	}
