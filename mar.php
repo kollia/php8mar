@@ -100,7 +100,7 @@ class main {
 	 * @return	void
 	 */
 	private function run() {
-		$issues = [];
+		$issues = array();
 		$totalFiles = 0;
 		$totalLines = 0;
 		$filePath = $this->scanner->getCurrentFilePath();
