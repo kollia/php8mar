@@ -91,7 +91,7 @@ class tests {
 			array_push($arr,array(
 				'type'		=> $testType,
 				'test'		=> $test,
-				'callable'	=> [$this->testTypes[$testType], '_'.$test]
+				'callable'	=> array($this->testTypes[$testType], '_'.$test)
 				)
 			);
 			/*$this->tests[] = array(
