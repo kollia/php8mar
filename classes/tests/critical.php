@@ -23,14 +23,14 @@ class critical {
 	 *
 	 * @var		array
 	 */
-	private $tests = [
+	private $tests = array(
 		'variableInterpolation',
 		'duplicateFunctionParameter',
 		'reservedNames',
 		'deprecatedFunctions',
 		'newOperatorWithReference',
 		'oldClassConstructors',
-	];
+	);
 
 	/**
 	 * Get all tests for this test type.
@@ -69,13 +69,13 @@ class critical {
 		if (preg_match($regex, $line, $matches)) {
 			//Abuse the lexer to get variables out.
 			$tokens = token_get_all("<?php ".$matches[1]."?>");
-			$variables = [];
+			$variables = array();
 			foreach ($tokens as $token) {
 				if (!is_array($token)) {
 					continue;
 				}
 				if ($token[0] == T_VARIABLE) {
-					$variables[] = $token[1];
+					array_push($variables,$token[1]);
 				}
 			}
 
