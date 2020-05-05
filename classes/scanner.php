@@ -30,7 +30,7 @@ class scanner {
 	 *
 	 * @var   array
 	 */
-	private $extensions = ['php'];
+	private $extensions = array('php');
 
 	/**
 	 * Main Constructor
