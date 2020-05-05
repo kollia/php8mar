@@ -17,26 +17,26 @@ class tests {
 	 *
 	 * @var		array
 	 */
-	private $testTypes = [
+	private $testTypes = array(
 		'critical'	=> null,
 		'nuance'	=> null
-	];
+	);
 
 	/**
 	 * Common Regular Expressions used in tests.
 	 *
 	 * @var		array
 	 */
-	private $commonRegex = [
+	private $commonRegex = array(
 		'variable'	=> '[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*'
-	];
+	);
 
 	/**
 	 * Registered Tests, Callables
 	 *
 	 * @var		array
 	 */
-	private $tests = [];
+	private $tests = array();
 
 	/**
 	 * PHP Binary Path
@@ -87,11 +87,11 @@ class tests {
 	 */
 	public function registerTests($testType, $tests) {
 		foreach ($tests as $test) {
-			$this->tests[] = [
+			$this->tests[] = array(
 				'type'		=> $testType,
 				'test'		=> $test,
 				'callable'	=> [$this->testTypes[$testType], '_'.$test]
-			];
+			);
 		}
 	}
 
@@ -103,7 +103,7 @@ class tests {
 	 * @return	array	Any issues found
 	 */
 	public function testLine($line) {
-		$issues = [];
+		$issues = array();
 		foreach ($this->tests as $info) {
 			$fail = call_user_func($info['callable'], $line);
 			if ($fail) {
@@ -164,7 +164,7 @@ class tests {
 		$binary = $this->getPHPBinaryPath();
 		exec($binary.' -l '.escapeshellarg($filePath).' 2>&1', $output);
 
-		$syntax = [];
+		$syntax = array();
 		$errorMsgLine = ' in '.$filePath;
 		if (count($output)) {
 			foreach ($output as $string) {
