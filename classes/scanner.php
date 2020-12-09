@@ -98,7 +98,7 @@ class scanner {
 		}
 		$file = $_file['value'];
 
-		$lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		$lines = file($file, FILE_IGNORE_NEW_LINES);
 		if ($lines === false) {
 			$lines = array();
 		}
