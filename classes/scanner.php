@@ -26,6 +26,13 @@ class scanner {
 	private $files = array();
 
 	/**
+	 * current key position inside files array.
+	 *
+	 * @var		int
+	 */
+	private $this->filePos= 0;
+
+	/**
 	 * List of file extension(s) to process.
 	 *
 	 * @var   array
@@ -92,11 +99,11 @@ class scanner {
 	 * @return	mixed	Array of lines from the file or false for no more files.
 	 */
 	public function scanNextFile() {
-		$_file = each($this->files);
-		if ($_file === false) {
+		if(!isset($this->files[$this->filePos])) {
 			return false;
 		}
-		$file = $_file['value'];
+		$file = $this->files[$this->filePos];
+		$this->filePos++;
 
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
 		if ($lines === false) {
