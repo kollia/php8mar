@@ -30,7 +30,7 @@ class scanner {
 	 *
 	 * @var		int
 	 */
-	private $this->filePos= 0;
+	private $filePos= 0;
 
 	/**
 	 * List of file extension(s) to process.
@@ -98,13 +98,13 @@ class scanner {
 	 * @access	public
 	 * @return	mixed	Array of lines from the file or false for no more files.
 	 */
+	
 	public function scanNextFile() {
 		if(!isset($this->files[$this->filePos])) {
 			return false;
 		}
 		$file = $this->files[$this->filePos];
 		$this->filePos++;
-
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
 		if ($lines === false) {
 			$lines = array();
