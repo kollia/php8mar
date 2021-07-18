@@ -103,7 +103,6 @@ class main {
 		$issues = array();
 		$totalFiles = 0;
 		$totalLines = 0;
-		$filePath = $this->scanner->getCurrentFilePath();
 		if (!$this->options->getOption('t') || in_array('syntax', $this->options->getOption('t'), true)) {
 			$checkSyntax = true;
 			$versionGood = $this->tests->getPHPVersion();
@@ -117,12 +116,17 @@ class main {
 		while (($lines = $this->scanner->scanNextFile()) !== false) {
 			$totalFiles++;
 
+			$filePath = $this->scanner->getCurrentFilePath();
+			echo "scanning '$filePath'\n";
+			
 			//Check syntax and assign a line to grab if needed.
 			$grabLineNumber = null;
 			$grabLine = null;
 			if ($checkSyntax) {
 				$syntax = $this->tests->checkSyntax($filePath);
-				if (!isset($syntax['is_valid'])) {
+				if(	!isset($syntax['is_valid']) &&
+					isset($syntax['line'])			)
+				{
 					$grabLineNumber = $syntax['line'];
 				}
 			}

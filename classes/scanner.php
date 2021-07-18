@@ -26,11 +26,11 @@ class scanner {
 	private $files = array();
 
 	/**
-	 * current key position inside files array.
+	 * current key position inside $files array.
 	 *
 	 * @var		int
 	 */
-	private $filePos= 0;
+	private $currentFilePos= -1;
 
 	/**
 	 * List of file extension(s) to process.
@@ -100,11 +100,11 @@ class scanner {
 	 */
 	
 	public function scanNextFile() {
-		if(!isset($this->files[$this->filePos])) {
+		if(!isset($this->files[$this->currentFilePos + 1])) {
 			return false;
 		}
-		$file = $this->files[$this->filePos];
-		$this->filePos++;
+		$this->currentFilePos++;
+		$file = $this->files[$this->currentFilePos];
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
 		if ($lines === false) {
 			$lines = array();
@@ -119,7 +119,12 @@ class scanner {
 	 * @return	string	File Path
 	 */
 	public function getCurrentFilePath() {
-		return current($this->files);
+		if(	$this->currentFilePos < 0 ||
+			!isset($this->files[$this->currentFilePos])	)
+		{
+			return false;
+		}
+		return $this->files[$this->currentFilePos];
 	}
 
 	/**
