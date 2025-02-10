@@ -1,14 +1,13 @@
 {
-	"name": "alexia/php7mar",
+	"name": "gnovaro/php8mar",
 	"type": "project",
-	"description": "PHP 7 MAR, or just \"php7mar\", is a command line utility to generate reports on existing PHP 5 code to assist developers in porting their code quickly to PHP 7.",
-	"keywords": ["php7", "php5", "migration", "porting"],
+	"description": "PHP 8 MAR, or just \"php8mar\", is a command line utility to generate reports on existing PHP 7 code to assist developers in porting their code quickly to PHP 8.",
+	"keywords": ["php8", "php7", "php5", "migration", "porting"],
 	"homepage": "https://github.com/Alexia/php7mar",
 	"license": "GPL-3.0",
 	"authors": [
 		{
-			"name": "Alexia E. Smith",
-			"email": "washuu@gmail.com",
+			"name": "Gustavo Novaro",
 			"role": "Developer"
 		}
 	],
