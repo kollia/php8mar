@@ -7,6 +7,11 @@
 	"license": "GPL-3.0",
 	"authors": [
 		{
+			"name": "Alexia E. Smith",
+			"email": "washuu@gmail.com",
+			"role": "Developer"
+		},
+		{
 			"name": "Gustavo Novaro",
 			"role": "Developer"
 		}
