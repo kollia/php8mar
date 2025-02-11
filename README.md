@@ -1,10 +1,10 @@
 # Introduction
 
 #### Fork Note
-This was forked specifically to implement php 5.2 compatibility. For any poor souls that might have to deal with a php version this old...
+This was forked specifically to implement php 8.0 compatibility. For any poor souls that might have to deal with a php version this old...
 
 #### What is PHP 8 Migration Assistant Report(MAR)?
-PHP 8 MAR, or just "php8mar", is a command line utility to generate reports on existing PHP 5 code to assist developers in porting their code quickly to PHP 8.  It will run against invididual files or entire project folders.  Reports contain line numbers, issues noted, and suggested fixes along with documentation links.
+PHP 8 MAR, or just "php8mar", is a command line utility to generate reports on existing PHP 5.x or 7.x code to assist developers in porting their code quickly to PHP 8.  It will run against invididual files or entire project folders.  Reports contain line numbers, issues noted, and suggested fixes along with documentation links.
 
 #### Will php8mar automatically fix my code?
 No, php8mar does implement a full lexer to determine code changes and can not determine the intent of the code.  It uses lexer tokenizing, string matching, and regular expressions to find syntax changes that may cause issues when porting code to PHP 8.  As well, it will detect code snippets in comments and report them as it can not distinguish it as commented code.
