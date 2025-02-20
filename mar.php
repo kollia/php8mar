@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * MAR Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -191,4 +191,3 @@ class main {
 	}
 }
 $mar = new main();
-?>

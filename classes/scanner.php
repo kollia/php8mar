@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * Scanner Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -151,4 +151,3 @@ class scanner {
 		return (array) $this->extensions;
 	}
 }
-?>

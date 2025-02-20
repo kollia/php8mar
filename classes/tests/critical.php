@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * MAR Critical Tests Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -159,4 +159,3 @@ class critical {
 		return false;
 	}
 }
-?>

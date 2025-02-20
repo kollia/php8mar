@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * Options Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -241,4 +241,3 @@ class options {
 		return $this->options[$option];
 	}
 }
-?>
