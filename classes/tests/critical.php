@@ -125,7 +125,9 @@ class critical {
 			'mcrypt_generic_end', 'mcrypt_ecb', 'mcrypt_cbc', 'mcrypt_cfb', 'mcrypt_ofb', 'set_magic_quotes_runtime',
 			'magic_quotes_runtime', 'set_socket_blocking', 'call_user_method', 'call_user_method_array', 'define_syslog_variables',
 			'dl', 'ereg', 'ereg_replace', 'eregi', 'eregi_replace', 'session_register', 'session_unregister', 'session_is_registered',
-			'spliti', 'sql_regcase', 'image2wbmp', 'png2wbmp', 'jpeg2wbmp'
+			'spliti', 'sql_regcase', 'image2wbmp', 'png2wbmp', 'jpeg2wbmp', 'gmp_random', 'imap_header', 'ldap_sort',
+			'ldap_control_paged_result', 'ldap_control_paged_result_response', 'fgetss', 'hebrevc', 'convert_cyr_string',
+			'money_format', 'ezmlm_hash', 'restore_include_path', 'get_magic_quotes_gpc', 'get_magic_quotes_runtime', 'gzgetss',			
 		];
 
 		$regex = '#(?:' . implode('|', $deprecatedFunctions) . ')\(#i';
