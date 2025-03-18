@@ -3,6 +3,9 @@
 #### Fork Note
 This was forked specifically to implement php 8.0 compatibility. For any poor souls that might have to deal with a php version this old...
 
+#### Recomendations
+Consider to use https://github.com/rectorphp/rector
+
 #### What is PHP 8 Migration Assistant Report(MAR)?
 PHP 8 MAR, or just "php8mar", is a command line utility to generate reports on existing PHP 5.x or 7.x code to assist developers in porting their code quickly to PHP 8.  It will run against invididual files or entire project folders.  Reports contain line numbers, issues noted, and suggested fixes along with documentation links.
 
@@ -48,6 +51,13 @@ Give a try, use the included `testcases.php` to generate a report:
 	Path to the file or folder to run against.
 	The location of the file or folder to use for generating the report.  A fully qualified path is recommended.  Relative paths will be based off the php8mar folder.
 		*Example: -f="/path/to/folder"*
+```
+
+**-e**
+```
+	Path to the file or folder to exclude.
+	The location of the file or folder to ignore for generating the report.  A fully qualified path is recommended.  Relative paths will be based off the php8mar folder.
+		*Example: -e="/vendor/"*
 ```
 
 **-r**

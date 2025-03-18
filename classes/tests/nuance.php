@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * MAR Nuance Tests Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -164,4 +164,3 @@ class nuance {
 		return false;
 	}
 }
-?>

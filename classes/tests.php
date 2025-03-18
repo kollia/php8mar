@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * MAR Tests Class
  * Base class for MAR tests including common regular expressions and base logic.
  *
@@ -189,4 +189,3 @@ class tests {
 		return $syntax;
 	}
 }
-?>

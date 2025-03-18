@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP 7 MAR
+ * PHP 8 MAR
  * MAR Critical Tests Class
  *
  * @author     Alexia E. Smith <washuu@gmail.com>
@@ -97,7 +97,7 @@ class critical {
 	 * @return	boolean	Line matches test.
 	 */
 	public function _reservedNames($line) {
-		$regex = "#^\s*?(class|interface|trait)\s+?(?:bool|int|float|string|null|false|true|resource|object|mixed|numeric)(?:$|\s|{)#i";
+		$regex = "#^\s*?(class|interface|trait)\s+?(?:bool|int|float|string|null|false|true|resource|object|mixed|numeric|match)(?:$|\s|{)#i";
 		if (preg_match($regex, $line)) {
 			return true;
 		}
@@ -107,13 +107,31 @@ class critical {
 	/**
 	 * Functions deprecated and removed.
 	 *
-	 * @access	public
-	 * @param	string	Line to test against.
-	 * @return	boolean	Line matches test.
+	 * @access  public
+	 * @param   string  Line to test against.
+	 * @return  boolean Line matches test.
 	 */
 	public function _deprecatedFunctions($line) {
-		//$regex = "#(?:mysql_affected_rows|mysql_client_encoding|mysql_close|mysql_connect|mysql_create_db|mysql_data_seek|mysql_db_name|mysql_db_query|mysql_drop_db|mysql_errno|mysql_error|mysql_escape_string|mysql_fetch_array|mysql_fetch_assoc|mysql_fetch_field|mysql_fetch_lengths|mysql_fetch_object|mysql_fetch_row|mysql_field_flags|mysql_field_len|mysql_field_name|mysql_field_seek|mysql_field_table|mysql_field_type|mysql_free_result|mysql_get_client_info|mysql_get_host_info|mysql_get_proto_info|mysql_get_server_info|mysql_info|mysql_insert_id|mysql_list_dbs|mysql_list_fields|mysql_list_processes|mysql_list_tables|mysql_num_fields|mysql_num_rows|mysql_pconnect|mysql_ping|mysql_query|mysql_real_escape_string|mysql_result|mysql_select_db|mysql_set_charset|mysql_stat|mysql_tablename|mysql_thread_id|mysql_unbuffered_query|mcrypt_generic_end|mcrypt_ecb|mcrypt_cbc|mcrypt_cfb|mcrypt_ofb|set_magic_quotes_runtime|magic_quotes_runtime|set_socket_blocking|\ssplit)\(#i";
-		$regex = "#(?:mysql_affected_rows|mysql_client_encoding|mysql_close|mysql_connect|mysql_create_db|mysql_data_seek|mysql_db_name|mysql_db_query|mysql_drop_db|mysql_errno|mysql_error|mysql_escape_string|mysql_fetch_array|mysql_fetch_assoc|mysql_fetch_field|mysql_fetch_lengths|mysql_fetch_object|mysql_fetch_row|mysql_field_flags|mysql_field_len|mysql_field_name|mysql_field_seek|mysql_field_table|mysql_field_type|mysql_free_result|mysql_get_client_info|mysql_get_host_info|mysql_get_proto_info|mysql_get_server_info|mysql_info|mysql_insert_id|mysql_list_dbs|mysql_list_fields|mysql_list_processes|mysql_list_tables|mysql_num_fields|mysql_num_rows|mysql_pconnect|mysql_ping|mysql_query|mysql_real_escape_string|mysql_result|mysql_select_db|mysql_set_charset|mysql_stat|mysql_tablename|mysql_thread_id|mysql_unbuffered_query|mcrypt_generic_end|mcrypt_ecb|mcrypt_cbc|mcrypt_cfb|mcrypt_ofb|set_magic_quotes_runtime|magic_quotes_runtime|set_socket_blocking|call_user_method|call_user_method_array|define_syslog_variables|dl|ereg|ereg_replace|eregi|eregi_replace|mcrypt_generic_end|set_magic_quotes_runtime|session_register|session_unregister|session_is_registered|set_socket_blocking|\ssplit|spliti|sql_regcase|mysql_db_query|mysql_escape_string)\(#i";
+		$deprecatedFunctions = [
+			'mysql_affected_rows', 'mysql_client_encoding', 'mysql_close', 'mysql_connect', 'mysql_create_db',
+			'mysql_data_seek', 'mysql_db_name', 'mysql_db_query', 'mysql_drop_db', 'mysql_errno', 'mysql_error',
+			'mysql_escape_string', 'mysql_fetch_array', 'mysql_fetch_assoc', 'mysql_fetch_field', 'mysql_fetch_lengths',
+			'mysql_fetch_object', 'mysql_fetch_row', 'mysql_field_flags', 'mysql_field_len', 'mysql_field_name',
+			'mysql_field_seek', 'mysql_field_table', 'mysql_field_type', 'mysql_free_result', 'mysql_get_client_info',
+			'mysql_get_host_info', 'mysql_get_proto_info', 'mysql_get_server_info', 'mysql_info', 'mysql_insert_id',
+			'mysql_list_dbs', 'mysql_list_fields', 'mysql_list_processes', 'mysql_list_tables', 'mysql_num_fields',
+			'mysql_num_rows', 'mysql_pconnect', 'mysql_ping', 'mysql_query', 'mysql_real_escape_string', 'mysql_result',
+			'mysql_select_db', 'mysql_set_charset', 'mysql_stat', 'mysql_tablename', 'mysql_thread_id', 'mysql_unbuffered_query',
+			'mcrypt_generic_end', 'mcrypt_ecb', 'mcrypt_cbc', 'mcrypt_cfb', 'mcrypt_ofb', 'set_magic_quotes_runtime',
+			'magic_quotes_runtime', 'set_socket_blocking', 'call_user_method', 'call_user_method_array', 'define_syslog_variables',
+			'dl', 'ereg', 'ereg_replace', 'eregi', 'eregi_replace', 'session_register', 'session_unregister', 'session_is_registered',
+			'spliti', 'sql_regcase', 'image2wbmp', 'png2wbmp', 'jpeg2wbmp', 'gmp_random', 'imap_header', 'ldap_sort',
+			'ldap_control_paged_result', 'ldap_control_paged_result_response', 'fgetss', 'hebrevc', 'convert_cyr_string',
+			'money_format', 'ezmlm_hash', 'restore_include_path', 'get_magic_quotes_gpc', 'get_magic_quotes_runtime', 'gzgetss',			
+		];
+
+		$regex = '#(?:' . implode('|', $deprecatedFunctions) . ')\(#i';
+
 		if (preg_match($regex, $line)) {
 			return true;
 		}
@@ -159,4 +177,3 @@ class critical {
 		return false;
 	}
 }
-?>
